@@ -7,7 +7,7 @@ app.use(express.json());
 app.get('/teste', (req, res) => {
   res
     .status(200)
-    .send({ mensagem: 'boas-vindas à API' });
+    .json({ mensagem: 'boas-vindas à API' });
 });
 
 module.exports = app;
