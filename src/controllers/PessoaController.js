@@ -1,7 +1,11 @@
+const database = require("../models");
+
 class PessoaController {
   static async getAll(req, res) {
     try {
-      // acessaer o modelo para buscar todas as pessoas
+      const peopleList = await database.Pessoa.findAll();
+
+      return res.status(200).json(peopleList);
     } catch (error) {
       // erro ao buscar as pessoas
     }
