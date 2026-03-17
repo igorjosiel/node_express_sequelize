@@ -9,6 +9,14 @@ class Services {
     return dataSource[this.modelName].findAll();
   }
 
+  async getRegisterById(id) {
+    return dataSource[this.modelName].findByPk(id);
+  }
+
+  async createRegister(newData) {
+    return dataSource[this.modelName].create(newData);
+  }
+
   async updateRegister(updatedData, id) {
     const updatedRegistersList = await dataSource[this.modelName].update(
       updatedData,
@@ -20,6 +28,10 @@ class Services {
     }
 
     return true;
+  }
+
+  async deleteRegister(id) {
+    return dataSource[this.modelName].destroy({ where: { id: id } });
   }
 }
 
