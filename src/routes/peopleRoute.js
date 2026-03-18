@@ -12,8 +12,11 @@ router.get("/pessoas/:id", (req, res) => personController.getById(req, res));
 router.post("/pessoas", (req, res) => personController.create(req, res));
 router.put("/pessoas/:id", (req, res) => personController.update(req, res));
 router.delete("/pessoas/:id", (req, res) => personController.delete(req, res));
-/* router.get('/pessoas/:estudanteId/matriculas', (req, res) => personController.pegaMatriculas(req, res)); */
-router.post("/pessoas/:estudanteId/matriculas", (req, res) =>
+
+router.get("/pessoas/:studentId/matriculas", (req, res) =>
+  personController.getMatriculas(req, res),
+);
+router.post("/pessoas/:studentId/matriculas", (req, res) =>
   matriculaController.create(req, res),
 );
 
