@@ -13,6 +13,9 @@ router.post("/pessoas", (req, res) => personController.create(req, res));
 router.put("/pessoas/:id", (req, res) => personController.update(req, res));
 router.delete("/pessoas/:id", (req, res) => personController.delete(req, res));
 
+router.get("/professores/:teacherId/cursos", (req, res) =>
+  personController.getCursos(req, res),
+);
 router.get("/pessoas/:studentId/matriculas", (req, res) =>
   personController.getMatriculas(req, res),
 );

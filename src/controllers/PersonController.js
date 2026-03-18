@@ -19,6 +19,18 @@ class PersonController extends Controller {
       // error
     }
   }
+
+  async getCursos(req, res) {
+    const { teacherId } = req.params;
+
+    try {
+      const coursesList = await personServices.getCoursesByDocente(Number(teacherId));
+
+      return res.status(200).json(coursesList);
+    } catch (error) {
+      // error
+    }
+  }
 }
 
 module.exports = PersonController;

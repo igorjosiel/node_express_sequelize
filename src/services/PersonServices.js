@@ -11,6 +11,13 @@ class PersonServices extends Services {
 
     return matriculasList;
   }
+
+  async getCoursesByDocente(teacherId) {
+    const teacher = await super.getRegisterById(teacherId);
+    const coursesList = await teacher.getCursos();
+
+    return coursesList;
+  }
 }
 
 module.exports = PersonServices;
