@@ -9,7 +9,7 @@ class Controller {
 
       return res.status(200).json(registersList);
     } catch (error) {
-      // error
+      return res.status(500).json({ error: error.message });
     }
   }
 
@@ -21,7 +21,7 @@ class Controller {
 
       res.status(200).json(register);
     } catch (error) {
-      // error
+      return res.status(500).json({ error: error.message });
     }
   }
 
@@ -34,7 +34,7 @@ class Controller {
 
       return res.status(201).json(newRegister);
     } catch (error) {
-      // error
+      return res.status(500).json({ error: error.message });
     }
   }
 
@@ -58,7 +58,7 @@ class Controller {
 
       return res.status(200).json({ message: "Atualizado com sucesso" });
     } catch (error) {
-      // error
+      return res.status(500).json({ error: error.message });
     }
   }
 
@@ -70,7 +70,7 @@ class Controller {
 
       return res.status(200).json({ message: "Deletado com sucesso" });
     } catch (error) {
-      // error
+      return res.status(500).json({ error: error.message });
     }
   }
 }

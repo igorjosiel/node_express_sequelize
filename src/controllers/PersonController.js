@@ -18,7 +18,7 @@ class PersonController extends Controller {
 
       return res.status(200).json(matriculasList);
     } catch (error) {
-      // error
+      return res.status(500).json({ error: error.message });
     }
   }
 
@@ -32,7 +32,7 @@ class PersonController extends Controller {
 
       return res.status(200).json(coursesList);
     } catch (error) {
-      // error
+      return res.status(500).json({ error: error.message });
     }
   }
 
@@ -46,7 +46,7 @@ class PersonController extends Controller {
 
       return res.status(200).json({ courseCount });
     } catch (error) {
-      // error
+      return res.status(500).json({ error: error.message });
     }
   }
 
@@ -62,7 +62,7 @@ class PersonController extends Controller {
 
       return res.status(200).json(coursesList);
     } catch (error) {
-      // error
+      return res.status(500).json({ error: error.message });
     }
   }
 }
