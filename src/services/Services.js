@@ -23,9 +23,7 @@ class Services {
       { where: { id: id } },
     );
 
-    if (updatedRegistersList[0] === 0) {
-      return false;
-    }
+    if (updatedRegistersList[0] === 0) return false;
 
     return true;
   }
