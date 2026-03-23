@@ -31,8 +31,13 @@ module.exports = (sequelize, DataTypes) => {
       defaultScope: {
         where: {
           ativo: true,
-        }
-      }
+        },
+      },
+      scopes: {
+        allRegisters: {
+          where: {},
+        },
+      },
     },
   );
   return Pessoa;

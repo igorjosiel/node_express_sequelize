@@ -35,6 +35,12 @@ class PersonServices extends Services {
 
     return coursesList;
   }
+
+  async getPeopleScopeAllRegisters() {
+    const peopleList = await super.getRegistersByScope("allRegisters");
+    
+    return peopleList;
+  }
 }
 
 module.exports = PersonServices;
